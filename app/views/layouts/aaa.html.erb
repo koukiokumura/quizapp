@@ -1,0 +1,60 @@
+<div class="contents row">
+<div class="container">
+  <%= form_tag('/contents', method: :post) do %>
+    <h3>
+      投稿する
+    </h3>
+    <input type="text" name="question">
+    <input placeholder="Image Url" type="text" name="image">
+    <textarea placeholder="comment" cols="30" rows="10" name="text"></textarea>
+    <input type="submit" value="SENT">
+  <% end %>
+</div>
+</div>
+
+
+<div class="footer">
+  <div class="footer__container">
+    <div class="footer__container-form">
+      <%= form_for [@group, @message], html: {id: 'new_message'},remote: true do |f| %>
+        <%= f.text_field :content, class: 'footer__container-form--message', placeholder: 'type a message' %>
+        <div class="footer__container-form--image">
+          <%= f.label :image, class: 'form__mask__image' do %>
+            <%= fa_icon 'picture-o', class: 'icon' %>
+            <%= f.file_field :image, class: 'hidden' %>
+          <% end %>
+        </div>
+        <div class="footer__container-form--space"></div>
+        <%= f.submit 'Send', class: 'footer__container-form-btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="field">
+        <%= f.label :correct %>
+        <%= f.text_field :correct %>
+      </div>
+      <div class="field">
+        <%= f.label :choice1 %>
+        <%= f.text_field :choice1 %>
+      </div>
+      <div class="field">
+        <%= f.label :choice2 %>
+        <%= f.text_field :choice2 %>
+      </div>
+      <div class="field">
+        <%= f.label :choice3 %>
+        <%= f.text_field :choice3 %>
+      </div>
+      <%= f.fields_for @question do |q| %>
+        <div class="field">
+          <%= q.label :correct %>
+          <%= q.number_field :correct %>
+        </div>
+        <% end %>
+        def question_params
+    params.permit(:correct)
+  end
+   question = Question.create(question_params)
+    question.save
+        @question = Question.new

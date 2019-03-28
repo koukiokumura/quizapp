@@ -1,0 +1,29 @@
+<header id="header-container">
+  <div class="header-content">
+    <h1 id="title"><a href="/">Quiz App</a></h1>
+      <nav id="main-navigation">
+        <ul class="list">
+          <li class="page"><a href="#column1">CONTENT 1</a></li>
+          <li class="page"><a href="/characters">CONTENT 2</a></li>
+          <li class="page"><a href="#column3">CONTENT 3</a></li>
+        </ul>
+      </nav>
+    <% if user_signed_in? %>
+      <div class="user user-login">
+        <li class="user-menu">
+        <span><%=  current_user.nickname %></span>
+          <ul class="user-info">
+            <li><%= link_to "My Page", "/users/current_user.id" %></li>
+            <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "NEW", "/contents/new",class: 'post' %></li>
+          </ul>
+        </li>
+      </div>
+      <% else %>
+      <div class="user user-logout">
+        <%= link_to "LOG IN", new_user_session_path, class: 'post' %>
+        <%= link_to "SIGN UP", new_user_registration_path, class: 'post' %>
+       </div>
+       <% end %>
+  </div>
+</header>

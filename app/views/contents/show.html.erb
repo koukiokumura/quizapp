@@ -1,0 +1,12 @@
+<div class="question">
+  <div class="question-container">
+    <div class="question-container__title">
+      <%= @content.question %>
+    </div>
+    <% @choices.each do |c| %>
+    <div class="question-container__choices">
+      <li><%= link_to c.text, content_contents_judge_path(c.content_id,c.correct),class:'btn' %></li>
+    </div>
+    <% end %>
+  </div>
+</div>

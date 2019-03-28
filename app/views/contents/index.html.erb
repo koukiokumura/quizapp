@@ -1,0 +1,65 @@
+<%= render partial: "header" %>
+<div id="content-container">
+  <div id="column-container">
+    <div id="column1" class="column">
+      <div class="main">
+        <% @contents.each do |content| %>
+        <%= render partial: "content", locals: { content: content }%>
+        <% end %>
+      </div>
+      <div class="side">
+        <% @ranking.each.with_index(1) do |content, i| %>
+        <div class="side-container">
+          <div class="side-container-content">
+        <%= i %>位.<%= content.question %>
+        <img src="<%= content.image %>" alt="" >
+          </div>
+        </div>
+
+        <% end %>
+
+      </div>
+    </div>
+    <div id="column2" class="column">
+      <div class="column_mainContent">
+        <p class="number"></p>
+      </div>
+    </div>
+
+    <div id="column3" class="column">
+      <div class="column_mainContent">
+        <p class="number"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer id="footer-container">
+  <div class="inner">
+    <p id="copyright">Copyright © okumura All Rights Reserved.</p>
+  </div>
+
+</footer>
+</div>
+<script type="text/javascript">
+  var moveheader = function() {
+    var header = $('#header-container')
+    headerHeight = $('#header-container').outerHeight(true);
+    $(header).parent().css('padding-top', headerHeight);
+    $(window).scroll(function() {
+      var scrollOffset = $(window).scrollTop();
+      if (scrollOffset < headerHeight) {
+        $(header).css('height', (headerHeight - scrollOffset));
+      }
+      if (scrollOffset > (headerHeight - 215)) {
+        header.addClass('fixme');
+      } else {
+        header.removeClass('fixme');
+      };
+    });
+  }
+  moveheader();
+</script>
+
+
+
+

@@ -1,0 +1,39 @@
+.top{
+  width:100vw;
+  height:100vh;
+}
+.character{
+  height: 100px;
+  width: 100px;
+  float:right;
+  a.character-post{
+    color:black;
+  }
+}
+.start{
+  text-align:center;
+  margin-top:300px;
+  font-size:5em;
+}
+.text{
+  height:100px;
+  width:200px;
+  font-size: 1em;
+  margin: 0 auto;
+}
+#effect {
+    height:60px;
+    width: 150px;
+    margin:0 auto;
+    text-align: center;
+    font-size: 2.5em;
+}
+.question1{
+  display:none;
+}
+.question2{
+  display:none;
+}
+.question3{
+  display:none;
+}

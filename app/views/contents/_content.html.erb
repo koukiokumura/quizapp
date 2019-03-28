@@ -1,0 +1,13 @@
+<div class="main-body">
+  <div class="main-body__content">
+    <%= link_to content_path(content.id), class: "main-body--link" do %>
+      <div class="main-body__content--image" style="background-image: url(<%= content.image %>);"></div>
+      <div class="main-body__content-container">
+        <div class="main-body__content-container--title"><%= content.question %></div>
+        <div class="main-body__content-container--text"><%= simple_format(content.text) %></div>
+        <div class="main-body__content-container--author"><span>author:</span> <%= content.user.nickname %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,43 @@
+.question{
+  height: 100vh;
+  width: 60vw;
+  margin: 0 auto;
+  &-container{
+    height:100%;
+    width:100%;
+    margin: 40px 0;
+    &__title{
+      height:100px;
+      width:90%;
+      margin: 0 auto;
+      padding:20px 0;
+      text-align: center;
+      font-size: 2em;
+    }
+    &__choices{
+      height:10%;
+      width:33%;
+      float:left;
+      margin:20px auto;
+      text-align:center;
+      font-size:1.5em;
+      color:black;
+      li{
+        list-style: none;
+      }
+      .btn {
+      display: inline-block;
+      padding: 0.3em 1em;
+      text-decoration: none;
+      color: #67c5ff;
+      border: solid 2px #67c5ff;
+      border-radius: 3px;
+      transition: .4s;
+      }
+      .btn:hover {
+      background: #67c5ff;
+      color: white;
+      }
+    }
+  }
+}

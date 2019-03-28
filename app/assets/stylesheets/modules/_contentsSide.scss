@@ -1,0 +1,21 @@
+.side{
+  width:300px;
+  height: calc(100vh - 115px);
+  float:left;
+  background-color: white;
+  margin: 20px;
+  overflow: scroll;
+  &-container{
+    height:35%;
+    width:100%;
+    margin: 20px 0 15px;
+    &-content{
+      height:100%;
+      width:75%;
+      margin:0 auto;
+      img{
+        margin:0 auto;
+      }
+    }
+  }
+}

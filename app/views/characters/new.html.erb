@@ -1,0 +1,21 @@
+<div class="form">
+  <div class="form-content">
+    <%= form_for @character do |f| %>
+    <div class="field">
+      <%= f.label :漢字 %>
+      <%= f.text_field :character %>
+    </div>
+    <div class="field">
+      <%= f.label :読み方 %>
+      <%= f.text_field :read %>
+    </div>
+    <div class="field">
+      <%= f.label :難易度 %>
+      <%= f.number_field :level %>
+    </div>
+    <div class="field">
+      <%= f.submit 'send' %>
+    </div>
+    <% end %>
+  </div>
+</div>

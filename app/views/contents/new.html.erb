@@ -1,0 +1,53 @@
+<div class="form">
+  <div class="form-content">
+    <%= form_for @content do |f| %>
+    <div class="field">
+      <%= f.label :ジャンル %>
+      <%= f.text_field :question %>
+    </div>
+    <div class="field">
+      <%= f.label :画像 %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%= f.label :問題 %>
+      <%= f.text_field :text %>
+    </div>
+    <% 3.times do %>
+    <%= f.fields_for :choices do |c| %>
+      <div class="field">
+        <%= c.label :選択肢 %>
+        <%= c.text_field 'text' %>
+      </div>
+      <div class="field">
+        <%= c.check_box 'correct' %>
+      </div>
+      <% end %>
+    <% end %>
+    <div class="field">
+      <%= f.submit 'send' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+.form
+  .form-content
+    = form_for @content do |f|
+      .field
+        = f.label :ジャンル
+        = f.text_field :question
+      .field
+        = f.label :画像
+        = f.file_field :image
+      .field
+        = f.label :問題
+        = f.text_field :text
+      - 3.times do
+        = f.fields_for :choices do |c|
+          .field
+            = c.label :選択肢
+            = c.text_field 'text'
+          .field
+            = c.check_box 'correct'
+      .field
+        = f.submit 'send'
