@@ -48,7 +48,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+
   <<: *default
-  database: quizapp_production
-  username: quizapp
-  password: <%= ENV['QUIZAPP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
